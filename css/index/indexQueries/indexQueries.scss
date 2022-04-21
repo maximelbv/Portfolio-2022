@@ -1,0 +1,162 @@
+@media (max-width: 1600px) {
+    .aboutCtn {
+        padding: 0 20px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .aboutPanel {
+        height: 200vh;
+        .aboutCtn {
+            height: 95%;
+            justify-content: flex-start;
+            padding: 20px 40px !important;
+            grid-template-columns: 1fr;
+            .cv {
+                // height: 80vh;
+                margin-right: 0;
+                padding: 10px !important;
+                .formations {
+                    .formation {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero {
+        flex-direction: column;
+        &Txt {
+            &:before {display: none}
+            margin-right: 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .aboutPanel {
+        height: 100vh;
+        .aboutCtn {
+            align-self: flex-start;
+            height: auto;
+            padding: 20px !important;
+            .cv {
+                grid-template-columns: repeat (2, 1fr);
+                grid-template-areas: 
+                    'formation formation'
+                    'softSkills centerOfInterest'
+                ;
+                .formations {
+                    &:after {display: none;}
+                    .dlCv {
+                        top: 0;
+                        bottom: auto;
+                    }
+                }
+                .centerOfInterest {
+                    margin-top: 0;
+                }
+            }
+            .aboutSeeMoreBtn {
+                display: block;
+            }
+        }
+    }
+
+    .description, .skills {
+        display: none;
+    }
+
+    .hero {
+        margin-top: -150px;
+        &Pic {
+            .memojiAnim {
+                display: none;
+            }
+        }
+        &Txt {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        &Socials {
+            justify-self: center;
+            flex-direction: row;
+            bottom: 20%;
+            left: auto;
+            & a {margin: 0 20px;}
+        }
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        &Txt {
+            & h1 {font-size: 30px;}
+            & h3 {font-size: 20px;}
+        }
+    }
+}
+
+@media (max-width: 315px) {
+    .hero {
+        &Pic {
+            width: 200px;
+            height: 200px;
+        }
+        &Txt {
+            & h1 {
+                font-size: 25px;
+            }
+        
+            & h3 {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-height: 820px) {
+    .cv {
+        height: 150vh;
+    }
+    .skills {display: none;}
+}
+
+@media (max-width: 768px) and (max-height: 640px) {
+        .cv {
+            height: 100vh !important;
+        }
+        .formationTwo {
+            display: none;
+        }
+
+    .hero {
+        &Pic {
+            width: 200px;
+            height: 200px;
+        }
+        &Txt {
+            & h1 {font-size: 25px;}   
+            & h3 {font-size: 20px;}
+        }
+    }
+}
+
+@media (max-width: 768px) and (max-height: 887px) {
+    .cv {
+        height: 100vh !important;
+    }
+    .softSkills, .centerOfInterest { 
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .dlCv {display: none;}
+}
