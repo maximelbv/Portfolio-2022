@@ -1,5 +1,14 @@
+if (window.innerWidth <= 1365) {
+	document.body.setAttribute('overflow', 'auto')
+}
+
+function returnBack() {
+	window.history.back();
+}
+
 (function() {
 	"use strict";
+	
 	var pnls = document.querySelectorAll('.panel').length,
 		scdir, hold = false;
 

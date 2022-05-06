@@ -1,0 +1,38 @@
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1200px) {
+    .container {
+        grid-template-areas: 
+        "header"
+        "cv"
+        "skills"
+        "returnHome"
+        "footer"
+        ;
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+        .header {margin-bottom: 0;}
+        // .cv {
+        //     margin-right: 0;
+        // }
+    }
+}
+
+@media (max-width: 768px) {
+    .cv {
+        grid-template-areas: 
+            "description description"
+            "formation formation"
+            "softSkills centerOfInterest"
+            
+        !important;
+        .formations {
+            &:after {display: none !important;}
+        }
+        .softSkills, .centerOfInterest {margin-top: 50px !important;}
+    }
+}
+
+@media (max-width: 480px) {
+}

@@ -49,18 +49,6 @@
     width: 100%;
     position: absolute;
     top: 0;
-
-    &Menu {
-        @include flexCenter;
-        position: absolute;
-        right: 100px;
-        list-style-type: none;
-        & a {
-            font-weight: 600;
-            margin: 0 20px;
-            text-decoration: none;
-        }
-    }
 }
 
 .hero {
@@ -94,8 +82,8 @@
         position: relative;
         @include flexCenter;
         border-radius: 50%;
-        width: 300px;
-        height: 300px;
+        width: 18.75rem;
+        height: 18.75rem;
         background: linear-gradient(315deg, rgba(0, 0, 0, 1) 0%, rgba(75, 75, 75, 1) 100%);
         .memoji {
             width: 70%;
@@ -216,18 +204,14 @@
                     right: 30px;
                     bottom: 0;
                     background: #272727;
-                    padding: 5px;
+                    padding: 10px;
                     font-size: 14px;
-                    &:before {
-                        background: #50AEC7;
-                        z-index: -1;
-                        position: absolute;
-                        left: -4px;
-                        bottom: -4px;
-                        content: '';
-                        display: block;
-                        width: 100%;
-                        height: 100%;
+                    border-radius: 5px;
+                    border: solid 2px #1572b6;
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: rgba(21, 114, 182, .5) 50 0 20px;
+                        transition: ease-in-out 200ms;
                     }
                 }
                 .formation {
@@ -243,28 +227,7 @@
                         margin-bottom: 4px;
                     }
                     .diploma {font-size: 14px;}
-                    .techStack {
-                        display: flex;
-                        margin-top: 10px;
-                        & p {
-                            position: relative;
-                            display: block;
-                            font-size: 12px;
-                            background: #272727;
-                            padding: 4px;
-                            margin-right: 6px;
-                            &:before {
-                                z-index: -1;
-                                position: absolute;
-                                left: -2px;
-                                bottom: -2px;
-                                content: '';
-                                display: block;
-                                width: 100%;
-                                height: 100%;
-                            }
-                        } 
-                    }
+                    
                 }
 
             }
@@ -291,19 +254,6 @@
             }
         }
 
-        .aboutSeeMoreBtn {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            bottom: 100px;
-            display: none;
-            background: #272727;
-            padding: 10px;
-            text-decoration: none;
-            width: fit-content;
-            
-        }
-
         .skills {
             & h2 {margin-bottom: 20px;}
             
@@ -327,11 +277,267 @@
         }
     }
 
+    .aboutCtnPhone {
+        margin: 20px;
+        @include flexCenter;
+        flex-direction: column;
+        height: calc(100% - 200px);
+        justify-content: space-around;
+        
+        & h2 {
+            font-size: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            &:after {
+                content: '';
+                width: 100px;
+                height: 4px;
+                background: white;
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        & p {
+            text-align: center;
+            font-size: 25px;
+            max-width: 800px;
+        }
+        display: none;
+    }
+
+}
+
+// work
+
+.workPanel {
+    max-width: 1920px;
+    margin: 0 auto;
+    @include flexCenter;
+    justify-content: flex-start;
+    flex-direction: column;
+    .workCtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: calc(100% - 200px);
+        .projectPanelTitle {
+            justify-self: flex-start;
+            font-size: 50px;
+        }
+        .projectsCtn {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            .project {
+                overflow: hidden;
+                position: relative;
+                padding: 20px;
+                text-decoration: none;
+                @include flexCenter;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 5px;
+                width: 350px;
+                height: 215px;
+                background: #272727;
+                &:before {
+                    content: '';
+                    height: 4px;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                }
+                &:hover {
+                    & > .projectTech {
+                        opacity: 1;
+                        transition: cubic-bezier(1, -0.06, .34, 1.04) 400ms;
+                    }
+                    transform: scale(1.01);
+                    transition: cubic-bezier(1, -0.06, .34, 1.04) 400ms;
+                    &:before {
+                        transition: cubic-bezier(1, -0.06, .34, 1.04) 400ms;
+                        left: 0;
+                    }
+                }
+                
+                &Title, &Desc {justify-self: flex-end;}
+                &Title {
+                    margin-top: 20px;
+                    position: relative;
+                    font-weight: bolder;
+                    font-size: 20px;
+                    &:after {
+                        content: '';
+                        height: 3px;
+                        width: 50px;
+                        background: white;
+                        position: absolute;
+                        bottom: -10px;
+                        left: 0;
+                    }
+                }
+                &Desc {
+                    margin-top: 20px;
+                }
+            }
+            .seeMoreProjects {
+                display: none;
+                text-decoration: none;
+                background: #272727;
+                padding: 10px;
+                width: fit-content;
+                justify-self: center;
+                margin-top: 20px
+            }
+        }
+    }
+    .workCtnPhone {
+        margin: 20px;
+        @include flexCenter;
+        flex-direction: column;
+        height: calc(100% - 200px);
+        justify-content: space-around;
+        & h2 {
+            font-size: 50px;
+            margin-bottom: 50px;
+            position: relative;
+    
+            &:after {
+                content: '';
+                width: 100px;
+                height: 4px;
+                background: white;
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    
+        & p {
+            text-align: center;
+            font-size: 25px;
+            max-width: 800px;
+        }
+
+        display: none;
+    }
+}
+
+.contactPanel {
+    @include flexCenter;
+    .contactIllustration {
+        position: relative;
+        justify-self: flex-start;
+        @include flexCenter;
+        background: #272727;
+        height: 100%;
+        width: 55%;
+        .cloudContactIllustration {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .contactInfo {
+        @include flexCenter;
+        flex-direction: column;
+        align-self: flex-start;
+        width: 45%;
+        height: 90%;
+        text-align: start;
+        font-size: 17px;
+        letter-spacing: .3px;
+        & h3 {
+            font-size: 35px;
+            margin-bottom: 50px;
+        }
+
+        .mail {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .phone {text-align: center}
+
+        .contactSocials {
+            @include flexCenter;
+            justify-content: flex-start;
+            & img {
+                margin-right: 40px;
+            }
+            .behance {margin: 0}
+        }  
+        .label {
+            font-size: 13px;
+            color: #7E7E7E;
+            font-weight: lighter;
+        }
+    }
+}
+
+.p1:before {background: #1f4671;}
+
+.p2:before {background: #ff1c1c;}
+
+.p3:before {background: #f08c23;}
+
+.p4:before {background: #add4ff;}
+
+.p5:before {background: #9356dc;}
+
+.p6:before {background: #0065fc;}
+
+.p7:before {background: #bdbec0;}
+
+.p8:before {background: #5884a3}
+
+.projectTech {
+    @include flexCenter;
+    opacity: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    padding: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background: #161616;
+    border-radius: 3px;
+    & img {
+        width: 100%;
+    }
+}
+
+.techStack {
+    display: flex;
+    margin-top: 10px;
+    & p {
+        position: relative;
+        display: block;
+        font-size: 12px;
+        background: #272727;
+        padding: 4px;
+        margin-right: 6px;
+        &:before {
+            z-index: -1;
+            position: absolute;
+            left: -2px;
+            bottom: -2px;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    } 
 }
 
 .wordpress:before {background: #457E9B;}
 .html:before {background: #F16524;}
-.css:before {background: #50AEC7;}
+.css:before {background: #1572b6;}
 .sass:before {background: #C75093;}
 .php:before {background: #777BB3;}
 .javascript:before {background: #E2CA53;}
@@ -340,7 +546,7 @@
 
 
 .htmlTxt {color: #F16524;}
-.cssTxt {color: #50AEC7;}
+.cssTxt {color: #1572b6;}
 .sassTxt {color: #C75093;}
 .javascriptTxt {color: #E2CA53;}
 .nodejsTxt {color: #539E43;}
@@ -352,3 +558,19 @@
 .xdTxt {color: #F975FD;}
 .photoshopTxt {color: #2F9FF2;}
 .illustratorTxt {color: #F29200;}
+
+.htmlBorder {border: 2px solid #F16524;}
+.cssBorder {border: 2px solid #1572b6;}
+.sassBorder {border: 2px solid #C75093;}
+.javascriptBorder {border: 2px solid #E2CA53;}
+.nodejsBorder {border: 2px solid #539E43;}
+.reactjsBorder {border: 2px solid #53DDE2;}
+.wordpressBorder {border: 2px solid #457E9B;}
+.phpBorder {border: 2px solid #777BB3;}
+.sqlBorder {border: 2px solid #3299DB;}
+.nosqlBorder {border: 2px solid #69B23F;}
+.gitBorder {border: 2px solid #E44D31;}
+.npmBorder {border: 2px solid #B32F32;}
+.xdBorder {border: 2px solid #F975FD;}
+.photoshopBorder {border: 2px solid #2F9FF2;}
+.illustratorBorder {border: 2px solid #F29200;}

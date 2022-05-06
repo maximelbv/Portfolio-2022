@@ -1,0 +1,180 @@
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background: #161616;
+    overflow: auto !important;
+}
+
+.container {
+    @include flexCenter;
+    flex-direction: column;
+    justify-content: space-around;
+    & > * {
+        margin: 50px;
+    }
+
+    .header {
+        position: relative;
+        @include flexCenter;
+        grid-area: header;
+        margin-top: 0;
+        height: 100px;
+        width: 100%;
+        background: #272727;
+    
+        &ReturnHome {
+            position: absolute;
+            left: 20px;
+            bottom: 32px;
+            transform: rotate(180deg);
+        }
+    }
+
+    .projectPanelTitle {
+        justify-self: flex-start;
+        font-size: 50px;
+    }
+
+    .projectsCtn {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        flex-wrap: wrap;
+        
+        .project {
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            text-decoration: none;
+            @include flexCenter;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 5px;
+            width: 350px;
+            height: 215px;
+            background: #272727;
+            &:before {
+                content: '';
+                height: 4px;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: -100%;
+            }
+            
+            &:hover {
+                & > .projectTech {
+                    opacity: 1;
+                    transition: cubic-bezier(1, -0.06, .34, 1.04) 400ms;
+                }
+                transform: scale(1.01);
+                transition: cubic-bezier(1, -0.06, .34, 1.04) 400ms;
+                &:before {
+                    transition: cubic-bezier(1, -0.06, .34, 1.04) 400ms;
+                    left: 0;
+                }
+            }
+
+            &Title,
+            &Desc {
+                justify-self: flex-end;
+            }
+
+            &Title {
+                margin-top: 20px;
+                position: relative;
+                font-weight: bolder;
+                font-size: 20px;
+
+                &:after {
+                    content: '';
+                    height: 3px;
+                    width: 50px;
+                    background: white;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                }
+            }
+
+            &Desc {
+                margin-top: 20px;
+            }
+        }
+
+        .seeMoreProjects {
+            display: none;
+            text-decoration: none;
+            background: #272727;
+            padding: 10px;
+            width: fit-content;
+            justify-self: center;
+            margin-top: 20px
+        }
+    }
+
+    .footer {
+        margin-bottom: 0;
+        grid-area: footer;
+        height: 100px;
+        width: 100%;
+        background: #272727;
+        @include flexCenter;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+}
+
+.projectTech {
+    @include flexCenter;
+    opacity: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    padding: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background: #161616;
+    border-radius: 3px;
+    & img {
+        width: 100%;
+    }
+}
+
+.p1:before {background: #1f4671;}
+
+.p2:before {background: #ff1c1c;}
+
+.p3:before {background: #f08c23;}
+
+.p4:before {background: #add4ff;}
+
+.p5:before {background: #9356dc;}
+
+.p6:before {background: #0065fc;}
+
+.p7:before {background: #bdbec0;}
+
+.p8:before {background: #5884a3}
+
+.htmlBorder {border: 2px solid #F16524;}
+.cssBorder {border: 2px solid #1572b6;}
+.sassBorder {border: 2px solid #C75093;}
+.javascriptBorder {border: 2px solid #E2CA53;}
+.nodejsBorder {border: 2px solid #539E43;}
+.reactjsBorder {border: 2px solid #53DDE2;}
+.wordpressBorder {border: 2px solid #457E9B;}
+.phpBorder {border: 2px solid #777BB3;}
+.sqlBorder {border: 2px solid #3299DB;}
+.nosqlBorder {border: 2px solid #69B23F;}
+.gitBorder {border: 2px solid #E44D31;}
+.npmBorder {border: 2px solid #B32F32;}
+.xdBorder {border: 2px solid #F975FD;}
+.photoshopBorder {border: 2px solid #2F9FF2;}
+.illustratorBorder {border: 2px solid #F29200;}

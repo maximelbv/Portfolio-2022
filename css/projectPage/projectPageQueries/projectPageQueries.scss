@@ -1,0 +1,68 @@
+@media (max-width: 1200px) {
+    .container {
+        margin-top: 0;
+        grid-template-columns: 1fr;
+        .logo {
+            margin: 40px 0;
+            & img {width: 150px;}
+        }
+        .info {
+            padding-left: 0;
+            &:after {display: none;}
+        }
+    }
+    .visuals {
+        .desktopVisual {
+            max-width: 90%;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .info {
+        align-items: center;
+        & > * {
+            margin: 4px !important;
+        }
+        .title {font-size: 20px !important;}
+        & img {
+            width: 20px;
+            height: 20px;
+        }
+        .description {font-size: 16px !important;}
+        .infoGrid {
+            grid-template-columns: 1fr !important;
+            & > * {margin-left: 20px !important;}
+        }
+    }
+
+    .label {
+        margin-bottom: 5px !important;
+        &:after {display: none;}
+    }
+    .projectTypeCtn, .dateCtn, .roleCtn, .technologiesCtn, {
+        text-align: center;
+    }
+
+    .techStack {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 315px) {
+    .visuals {
+        & > * {
+            max-width: 90%;
+            height: auto;   
+        }
+    }
+}

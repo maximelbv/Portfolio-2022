@@ -1,0 +1,1 @@
+@media (max-width: 1600px){.projectsCtn{grid-template-columns:repeat(3, 1fr) !important}}@media (max-width: 1200px){.projectPanelTitle,.returnHome{margin:0}.projectsCtn{width:95%;grid-template-columns:repeat(2, 1fr) !important}.projectsCtn .project{width:auto !important}}@media (max-width: 768px){.projectsCtn{grid-template-columns:1fr !important}}

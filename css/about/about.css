@@ -1,0 +1,321 @@
+body {
+  background: #161616;
+  overflow: auto !important;
+}
+
+.container {
+  grid-template-areas: "header header" "cv skills" "returnHome returnHome" "footer footer";
+  text-align: start;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+}
+
+.container .header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: header;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 100%;
+  background: #272727;
+}
+
+.container .headerReturnHome {
+  position: absolute;
+  left: 20px;
+  bottom: 32px;
+  transform: rotate(180deg);
+}
+
+.container .cv {
+  margin: 40px;
+  grid-area: cv;
+  margin-right: 75px;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-areas: "description description" "formation softSkills" "formation centerOfInterest";
+}
+
+.container .cv .description {
+  grid-area: description;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.container .cv .description:before {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+  display: block;
+  height: 95%;
+  width: 4px;
+  background: white;
+}
+
+.container .cv .description h2 {
+  margin-left: 20px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.container .cv .description p {
+  margin-left: 20px;
+  font-size: 16px;
+  letter-spacing: .5px;
+  line-height: 30px;
+}
+
+.container .cv .formations {
+  position: relative;
+  grid-area: formation;
+}
+
+.container .cv .formations:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 4px;
+  background: white;
+}
+
+.container .cv .formations .dlCv {
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.container .cv .formations .formation {
+  margin: 75px 0;
+}
+
+.container .cv .formations .formationOne {
+  margin-top: 40px;
+}
+
+.container .cv .formations .formation .date {
+  color: #7E7E7E;
+  font-size: 13px;
+}
+
+.container .cv .formations .formation .title {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.container .cv .formations .formation .diploma {
+  font-size: 14px;
+}
+
+.container .cv .formations .formation .techStack {
+  display: flex;
+  margin-top: 10px;
+}
+
+.container .cv .formations .formation .techStack p {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  background: #272727;
+  padding: 4px;
+  margin-right: 6px;
+}
+
+.container .cv .formations .formation .techStack p:before {
+  z-index: -1;
+  position: absolute;
+  left: -2px;
+  bottom: -2px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.container .cv .softSkills {
+  grid-area: softSkills;
+}
+
+.container .cv .softSkills h2 {
+  margin-bottom: 20px;
+}
+
+.container .cv .softSkills div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+.container .cv .softSkills div img {
+  margin-right: 5px;
+}
+
+.container .cv .centerOfInterest {
+  grid-area: centerOfInterest;
+  margin-top: -100px;
+}
+
+.container .cv .centerOfInterest h2 {
+  margin-bottom: 20px;
+}
+
+.container .cv .centerOfInterest div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+.container .cv .centerOfInterest div img {
+  margin-right: 5px;
+}
+
+.container .skills {
+  margin: 40px;
+  grid-area: skills;
+}
+
+.container .skills h2 {
+  margin-bottom: 20px;
+}
+
+.container .skills ul li {
+  list-style-type: none;
+  background: #272727;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.container .skills .plusIconCtn {
+  margin: 40px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 5px white solid;
+  border-radius: 50%;
+}
+
+.container .buttons {
+  justify-self: center;
+  grid-area: returnHome;
+  margin: 40px auto;
+}
+
+.container .seeProjects {
+  margin-right: 10px;
+}
+
+.container .footer {
+  margin-top: 40px;
+  grid-area: footer;
+  height: 100px;
+  background: #272727;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wordpress:before {
+  background: #457E9B;
+}
+
+.html:before {
+  background: #F16524;
+}
+
+.css:before {
+  background: #50AEC7;
+}
+
+.sass:before {
+  background: #C75093;
+}
+
+.php:before {
+  background: #777BB3;
+}
+
+.javascript:before {
+  background: #E2CA53;
+}
+
+.nodejs:before {
+  background: #539E43;
+}
+
+.reactjs:before {
+  background: #53DDE2;
+}
+
+.htmlTxt {
+  color: #F16524;
+}
+
+.cssTxt {
+  color: #50AEC7;
+}
+
+.sassTxt {
+  color: #C75093;
+}
+
+.javascriptTxt {
+  color: #E2CA53;
+}
+
+.nodejsTxt {
+  color: #539E43;
+}
+
+.reactjsTxt {
+  color: #53DDE2;
+}
+
+.sqlTxt {
+  color: #3299DB;
+}
+
+.nosqlTxt {
+  color: #69B23F;
+}
+
+.gitTxt {
+  color: #E44D31;
+}
+
+.npmTxt {
+  color: #B32F32;
+}
+
+.xdTxt {
+  color: #F975FD;
+}
+
+.photoshopTxt {
+  color: #2F9FF2;
+}
+
+.illustratorTxt {
+  color: #F29200;
+}
